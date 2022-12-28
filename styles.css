@@ -1,0 +1,284 @@
+:root {
+    --cyan: hsl(172, 67%, 45%);
+    --dark-cyan: hsl(183, 100%, 15%);
+    --dark-grayish-cyan: hsl(186, 14%, 43%);
+    --grayish-cyan: hsl(184, 14%, 56%);
+    --light-grayish-cyan: hsl(185, 41%, 84%);
+    --very-light-grayish-cyan: hsl(189, 41%, 97%);
+    --white: hsl(0, 0%, 100%);
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+    background-color: var(--light-grayish-cyan);
+}
+
+h1 {
+    letter-spacing:0.5rem;
+}
+
+* {
+    font-family: "Space Mono", serif;
+}
+
+.footer-container {
+
+    color: var(--dark-cyan);
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+input[type="radio"] {
+    display:none !important;
+}
+
+input[type="radio"] + label {
+    border-radius: 5px;
+    position: relative;
+    cursor:pointer;
+    font-size: 1.5em;
+}
+
+input[type="radio"]:checked + label {
+    background-color: var(--cyan);
+}
+
+.tip label,
+.tip .radio-input {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 45px;
+    border: 1px solid #CCC;
+    padding: 1px;
+    cursor: pointer;
+    background-color: var(--dark-cyan);
+    color: var(--white);
+}
+
+.custom-input input {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    padding: 1px;
+    width: 100%;
+    font-size: 1.5em;
+    border: 1px solid var(--very-light-grayish-cyan);
+    background-color: var(--very-light-grayish-cyan);
+    font-weight: 800;
+    color: var(--dark-cyan);
+}
+
+.custom-input input:focus{
+    outline: var(--cyan) solid 2px;
+}
+
+.input-icons i {
+    position: absolute;
+}
+
+.input-icons {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.icon {
+    padding: 25px;
+    min-width: 40px;
+    color: var(--dark-grayish-cyan);
+    opacity: 50%;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+    text-align: right;
+    background-color: var(--very-light-grayish-cyan);
+    font-size: 1.5em;
+    border: 0;
+    outline: none;
+    border-radius: 5px;
+    height: 30px;
+    color: var(--dark-cyan);
+    font-weight: 800;
+}
+
+.input-container {
+    width: 92.5%;
+}
+
+.tip-option {
+    margin-bottom: 3%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height:100%;
+}
+
+.tip {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 5%;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.tip > div {
+    flex: 0 0 47%;
+    display: flex;
+}
+
+.label {
+    width: 100%;
+    display: inline;
+    color: var(--dark-grayish-cyan);
+}
+
+.column {
+    display: flex;
+    flex-direction: row;
+}
+
+.number {
+    font-weight: 700;
+    font-size: 2rem;
+    color:var(--cyan);
+}
+
+.container {
+    border-radius: 15px 15px 0 0;
+    background-color: var(--white);
+    flex-direction: row;
+    flex: 1 0 auto;
+    padding: 8% 8% 8% 8%;
+    justify-content: space-around;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--dark-cyan);
+    margin-bottom: 3%;
+}
+
+.container > .people {
+    margin-top:50px
+}
+
+.people > input {
+    margin-top: 2%;
+    width: 100%;
+}
+
+.h4 {
+    font-weight:600;
+    font-size: 1rem;
+    color: var(--dark-grayish-cyan);
+}
+
+h5 {
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.small {
+    color: var(--dark-grayish-cyan);
+    font-weight: 800;
+    font-size: 0.8rem;
+}
+
+.tip-amount {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tip-amount:nth-child(2)
+{
+    margin-top: 5%;
+}
+
+.tip-container {
+    background-color: var(--dark-cyan);
+    width: 90%;
+    border-radius: 15px;
+    margin-top: 10%;
+    padding: 10% 5% 5% 5%;
+    justify-content: end;
+}
+
+
+
+.bill-container {
+    width: 100%;
+    justify-content: start;
+}
+
+.btn-reset {
+    margin-top: 10%;
+    width: 100%;
+    height: 50px;
+    background-color: var(--cyan);
+    color: var(--dark-cyan);
+    border-radius: 5px;
+    border: 0;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+@media (min-width: 600px) {
+    body {
+        padding: 1.5% 10% 0 10%;
+    }
+    .column {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .tip:nth-child(1){
+        flex: 0 0 100%;
+    }
+    .tip:nth-child(2){
+        flex: 0 0 50%;
+    }
+
+    .tip-container {
+        width: 50%;
+        margin-top: 0;
+        border: tomato solid 1px;
+    }
+
+    .bill-container {
+        padding: 0 5% 5% 5%;
+        width: 50%;
+    }
+
+    .tip {
+        margin-bottom: 5%;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+}
