@@ -7,6 +7,10 @@ let peopleInput = document.getElementById('people');
 let tipAmountInputs = document.querySelectorAll('input[type=radio][name=tip-amount]');
 let tipAmountCustom = document.getElementById('tip-amount-custom');
 
+let tipPlaceholder = document.getElementById('tip-amount-person-placeholder')
+let totalPlaceholder = document.getElementById('total-amount-person-placeholder')
+
+
 tipAmountCustom.addEventListener('focus', () => {
     uncheckRadios()
 });
@@ -43,6 +47,8 @@ document.getElementById('reset').addEventListener('click', () => {
     bill        = 0;
     people      = 0;
     tipAmount   = 0;
+    totalPlaceholder.innerText = "0.00";
+    tipPlaceholder.innerText = "0.00";
 })
 
 function uncheckRadios() {
@@ -62,6 +68,6 @@ function calculate() {
 
     validate()
 
-    document.getElementById('tip-amount-person-placeholder').innerText = (totalTip / people).toFixed(2);
-    document.getElementById('total-amount-person-placeholder').innerText = (total / people).toFixed(2);
+    tipPlaceholder.innerText = (totalTip / people).toFixed(2);
+    totalPlaceholder.innerText = (total / people).toFixed(2);
 }
