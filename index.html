@@ -13,62 +13,67 @@
   </head>
   <body>
     <main>
-        <div class="title"><h1>SPLI<br>TTER</h1></div>
-        <div class="container">
-            <div class="bill-container">
-                <div class="input-container">
-                    <label class="h4 label" for="bill">Bill</label>
-                    <div class="people input-icons" style="">
-                        <i class="fa fa-usd icon"></i>
-                        <input type="number" class="input-field" name="bill" id="bill" value="0" min="1"/>
+        <form name="calculate-tip" id="calculate-tip" method="post">
+            <div class="title"><h1>SPLI<br>TTER</h1></div>
+            <div class="container">
+                <div class="bill-container">
+                    <div class="input-container">
+                        <label class="h4 label" for="bill">Bill</label>
+                        <span class="error-msg" id="bill-msg-container"></span>
+                        <div class="people input-icons" style="">
+                            <i class="fa fa-usd icon"></i>
+                            <input type="number" class="input-field" name="bill" id="bill" value="1" min="1" pattern="^[1-9]\d*$" title="Can't be less than 1">
+                        </div>
+                    </div>
+                    <div class="tip">
+                        <h4 class="label">Select tip %</h4>
+                        <div class="tip-option">
+                            <input type="radio" class="radio-input" name="tip-amount" id="tip-amount-05" value="0.05"/>
+                            <label for="tip-amount-05">5%</label>
+                        </div>
+                        <div class="tip-option">
+                            <input type="radio" class="radio-input" name="tip-amount" id="tip-amount-10" value="0.10"/>
+                            <label for="tip-amount-10">10%</label>
+                        </div>
+                        <div class="tip-option">
+                            <input type="radio" class="radio-input" name="tip-amount" id="tip-amount-15" value="0.15"/>
+                            <label for="tip-amount-15">15%</label>
+                        </div>
+                        <div class="tip-option">
+                            <input type="radio" class="radio-input" name="tip-amount" id="tip-amount-25" value="0.25"/>
+                            <label for="tip-amount-25">25%</label>
+                        </div>
+                        <div class="tip-option">
+                            <input type="radio" class="radio-input" name="tip-amount" id="tip-amount-50" value="0.50"/>
+                            <label for="tip-amount-50">50%</label>
+                        </div>
+                        <div class="custom-input">
+                            <input placeholder="Custom" type="number" min="0" name="tip-amount-custom" id="tip-amount-custom" value="" title="Can't be less than 0"/>
+                        </div>
+                        <span class="error-msg" id="tip-msg-container"></span>
+                    </div>
+                    <div class="input-container">
+                        <label class="h4 label" for="people">Number of People</label>
+                        <span class="error-msg" id="people-msg-container"></span>
+                        <div class="people input-icons" style="">
+                            <i class="fa fa-user icon"></i>
+                            <input type="number" class="input-field" name="people" id="people" value="1" min="1" pattern="^[1-9]\d*$" title="Can't be less than 1"/>
+                        </div>
                     </div>
                 </div>
-                <div class="tip">
-                    <h4 class="label">Select tip %</h4>
-                    <div class="tip-option">
-                        <input type="radio" class="radio-input" name="tip-amount" id="tip-amount-05" value="0.05"/>
-                        <label for="tip-amount-05">5%</label>
+                <div class="tip-container">
+                    <div class="tip-amount">
+                        <div><h5 style="">Tip Amount</h5><span class="small">/ person</span></div>
+                        <div class="number">$<span id="tip-amount-person-placeholder">0.00</span></div>
                     </div>
-                    <div class="tip-option">
-                        <input type="radio" class="radio-input" name="tip-amount" id="tip-amount-10" value="0.10"/>
-                        <label for="tip-amount-10">10%</label>
+                    <div class="tip-amount">
+                        <div><h5 style="margin: 0;padding: 0">Total</h5><span class="small">/ person</span></div>
+                        <div class="number">$<span id="total-amount-person-placeholder">0.00</span></div>
                     </div>
-                    <div class="tip-option">
-                        <input type="radio" class="radio-input" name="tip-amount" id="tip-amount-15" value="0.15"/>
-                        <label for="tip-amount-15">15%</label>
-                    </div>
-                    <div class="tip-option">
-                        <input type="radio" class="radio-input" name="tip-amount" id="tip-amount-25" value="0.25"/>
-                        <label for="tip-amount-25">25%</label>
-                    </div>
-                    <div class="tip-option">
-                        <input type="radio" class="radio-input" name="tip-amount" id="tip-amount-50" value="0.50"/>
-                        <label for="tip-amount-50">50%</label>
-                    </div>
-                    <div class="custom-input">
-                        <input placeholder="Custom" type="number" maxlength="3" min="0" name="tip-amount-custom" id="tip-amount-custom" value=""/>
-                    </div>
-                </div>
-                <div class="input-container">
-                    <label class="h4 label" for="people">Number of People</label>
-                    <div class="people input-icons" style="">
-                        <i class="fa fa-user icon"></i>
-                        <input type="number" class="input-field" name="people" id="people" value="0" min="1"/>
-                    </div>
+                    <input type="button" class="btn-reset" name="reset-btn" id="reset-btn" value="Reset"/>
                 </div>
             </div>
-            <div class="tip-container">
-                <div class="tip-amount">
-                    <div><h5 style="">Tip Amount</h5><span class="small">/ person</span></div>
-                    <div class="number">$<span id="tip-amount-person-placeholder">0.00</span></div>
-                </div>
-                <div class="tip-amount">
-                    <div><h5 style="margin: 0;padding: 0">Total</h5><span class="small">/ person</span></div>
-                    <div class="number">$<span id="total-amount-person-placeholder">0.00</span></div>
-                </div>
-                <input type="button" class="btn-reset" name="reset" id="reset" value="Reset"/>
-            </div>
-        </div>
+        </form>
     </main>
     <div class="footer-container">
         <div class="attribution">

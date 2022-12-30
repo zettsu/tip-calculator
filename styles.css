@@ -51,6 +51,14 @@ input[type="radio"]:checked + label {
     background-color: var(--cyan);
 }
 
+input:invalid {
+    border: tomato solid 1px;
+}
+
+.custom-input input:invalid {
+    border: tomato solid 1px;
+}
+
 .tip label,
 .tip .radio-input {
     text-align: center;
@@ -165,7 +173,7 @@ body {
     background-color: var(--white);
     flex-direction: row;
     flex: 1 0 auto;
-    padding: 8% 8% 8% 8%;
+    padding: 6% 6% 6% 6%;
     justify-content: space-around;
 }
 
@@ -225,7 +233,14 @@ h5 {
     justify-content: end;
 }
 
+.error-msg {
+    color: tomato;
+    float: right;
+}
 
+.container > .error-msg {
+    color: tomato;
+}
 
 .bill-container {
     width: 100%;
@@ -264,7 +279,6 @@ h5 {
     .tip-container {
         width: 50%;
         margin-top: 0;
-        border: tomato solid 1px;
     }
 
     .bill-container {
