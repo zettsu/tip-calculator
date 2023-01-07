@@ -31,13 +31,25 @@ document.getElementById('bill').addEventListener('change', () => {
 tipAmountRadios.forEach(radio => {
     radio.addEventListener('click',  (evt) => {
         tipAmount = parseFloat(evt.target.value)
+        resetTipAmountCustom()
         calculate()
     })
 })
 
-document.getElementById('reset-btn').addEventListener('click', () => {
-    document.getElementById("calculate-tip").reset()
-})
+function resetTipAmountCustom() {
+    document.getElementById('tip-amount-custom').value = ""
+}
+
+function resetForm(){
+    uncheckRadios()
+    cleanErrorMessages()
+
+    document.getElementById('people').value = 1
+    document.getElementById('bill').value = 1
+    resetTipAmountCustom()
+    document.getElementById('tip-amount-person-placeholder').innerText = "0.00"
+    document.getElementById('total-amount-person-placeholder').innerText = "0.00"
+}
 
 function uncheckRadios() {
     tipAmountRadios.forEach( radio =>
@@ -63,8 +75,6 @@ function tipIsMissing() {
 function validate() {
     cleanErrorMessages()
     let fields = document.querySelectorAll(':invalid')
-
-    console.log(fields)
 
     fields.forEach(field => setErrorMessage(field))
 

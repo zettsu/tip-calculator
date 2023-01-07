@@ -22,12 +22,11 @@
                         <span class="error-msg" id="bill-msg-container"></span>
                         <div class="people input-icons" style="">
                             <i class="fa fa-usd icon"></i>
-                            <input type="number" class="input-field" name="bill" id="bill" value="1" min="1" pattern="^[1-9]\d*$" title="Can't be less than 1">
+                            <input type="number" class="input-field" name="bill" id="bill" value="1" min="1" title="Can't be less than 1" required>
                         </div>
                     </div>
                     <div class="tip">
-                        <h4 class="label">Select tip %</h4>
-                        <span class="error-msg" id="tip-msg-container"></span>
+                        <h2 class="h4 label">Select tip %</h2>
                         <div class="tip-option">
                             <input type="radio" class="radio-input" name="tip-amount" id="tip-amount-05" value="0.05"/>
                             <label for="tip-amount-05">5%</label>
@@ -52,12 +51,13 @@
                             <input placeholder="Custom" type="number" min="0" name="tip-amount-custom" id="tip-amount-custom" value="" title="Can't be less than 0"/>
                         </div>
                     </div>
+                    <span class="error-msg" id="tip-msg-container"></span>
                     <div class="input-container">
                         <label class="h4 label" for="people">Number of People</label>
                         <span class="error-msg" id="people-msg-container"></span>
                         <div class="people input-icons" style="">
                             <i class="fa fa-user icon"></i>
-                            <input type="number" class="input-field" name="people" id="people" value="1" min="1" pattern="^[1-9]\d*$" title="Can't be less than 1"/>
+                            <input type="number" class="input-field" name="people" id="people" value="1" min="1" title="Can't be less than 1" required/>
                         </div>
                     </div>
                 </div>
@@ -70,17 +70,19 @@
                         <div><h5 style="margin: 0;padding: 0">Total</h5><span class="small">/ person</span></div>
                         <div class="number">$<span id="total-amount-person-placeholder">0.00</span></div>
                     </div>
-                    <input type="button" class="btn-reset" name="reset-btn" id="reset-btn" value="Reset"/>
+                    <input type="button" class="btn-reset" name="reset-btn" onclick="resetForm()" id="reset-btn" value="Reset"/>
                 </div>
             </div>
         </form>
     </main>
-    <div class="footer-container">
-        <div class="attribution">
-            Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-            Coded by <a href="#">Matias Olivera</a>.
+    <footer>
+        <div class="footer-container">
+            <div class="attribution">
+                Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+                Coded by <a href="#">Matias Olivera</a>.
+            </div>
         </div>
-    </div>
-  <script src="index.js"></script>
+    </footer>
+    <script src="index.js"></script>
   </body>
 </html>
