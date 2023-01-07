@@ -48,7 +48,7 @@
                             <label for="tip-amount-50">50%</label>
                         </div>
                         <div class="custom-input">
-                            <input placeholder="Custom" type="number" min="0" name="tip-amount-custom" id="tip-amount-custom" value="" title="Can't be less than 0"/>
+                            <input placeholder="Custom" type="number" min="0" name="tip-amount-custom" id="tip-amount-custom" value="" title="Can't be less than 0" aria-label="custom tip"/>
                         </div>
                     </div>
                     <span class="error-msg" id="tip-msg-container"></span>
@@ -63,11 +63,11 @@
                 </div>
                 <div class="tip-container">
                     <div class="tip-amount">
-                        <div><h5 style="">Tip Amount</h5><span class="small">/ person</span></div>
+                        <div><p class="subtitle">Tip Amount</p><span class="small">/ person</span></div>
                         <div class="number">$<span id="tip-amount-person-placeholder">0.00</span></div>
                     </div>
                     <div class="tip-amount">
-                        <div><h5 style="margin: 0;padding: 0">Total</h5><span class="small">/ person</span></div>
+                        <div><p class="subtitle">Total</p><span class="small">/ person</span></div>
                         <div class="number">$<span id="total-amount-person-placeholder">0.00</span></div>
                     </div>
                     <input type="button" class="btn-reset" name="reset-btn" onclick="resetForm()" id="reset-btn" value="Reset"/>
